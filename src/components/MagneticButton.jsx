@@ -1,9 +1,25 @@
 import { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
 
-/* Primary CTA. Soft magnetic pull on pointer devices only;
-   plain (but still premium) on touch and reduced-motion. */
-export default function MagneticButton({ href, children, className = '' }) {
+const variants = {
+  /* Pink→magenta gradient pill from the brand banner */
+  primary:
+    'cta-gradient inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-7 py-3.5 font-sans text-[0.95rem] font-semibold',
+  /* Quiet outline twin for secondary actions (Call, WhatsApp) */
+  ghost:
+    'inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-wisteria/50 px-7 py-3.5 font-sans text-[0.95rem] font-semibold text-lilac transition-colors duration-300 hover:border-lilac hover:text-parchment',
+}
+
+/* CTA with a soft magnetic pull on pointer devices; plain (but still
+   premium) on touch and reduced-motion. `arrow` adds the → glyph. */
+export default function MagneticButton({
+  href,
+  children,
+  className = '',
+  variant = 'primary',
+  arrow = true,
+  ...rest
+}) {
   const ref = useRef(null)
   const reduced = useReducedMotion()
   const x = useMotionValue(0)
@@ -36,10 +52,13 @@ export default function MagneticButton({ href, children, className = '' }) {
       onPointerMove={onMove}
       onPointerLeave={onLeave}
       style={{ x: sx, y: sy }}
-      className={`cta-gradient inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-7 py-3.5 font-sans text-[0.95rem] font-semibold ${className}`}
+      className={`${variants[variant]} ${className}`}
+      {...rest}
     >
       {children}
-      <span aria-hidden="true" className="text-lg leading-none">→</span>
+      {arrow && (
+        <span aria-hidden="true" className="text-lg leading-none">→</span>
+      )}
     </motion.a>
   )
 }

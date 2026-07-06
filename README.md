@@ -4,7 +4,7 @@ A single-page portfolio for a digital marketer, graphic designer, and content
 creator. Mobile-first, dark pastel purple, built to drive contact-form
 enquiries from a business-card QR code.
 
-**Stack:** React 18 · Vite · Tailwind CSS · Framer Motion · Lenis smooth scroll
+**Stack:** React 18 · Vite · Tailwind CSS · GSAP + ScrollTrigger · Lenis smooth scroll · Framer Motion (grid FLIP)
 
 ## Run it
 
@@ -59,5 +59,11 @@ tailwind.config.js          ← the purple design tokens (plum/wisteria/lilac/ma
 - **Accents:** wisteria `#B79FD4`, lilac `#C9B6E4`, rose-mauve glow `#D9A8C4`
 - **Text:** parchment `#F0EAF6` / dim `#C9C0D8` — never pure white
 - **Type:** Fraunces (display, italic = emphasis voice) + Instrument Sans (body)
-- **Motion:** staggered mask reveals, slow craft ticker, magnetic CTA — all
-  respect `prefers-reduced-motion`
+- **Motion system** (all GPU transforms, all gated by `prefers-reduced-motion`):
+  - Branded intro loader (~1.7s): name mask-reveals, progress line fills, veil wipes up
+  - Lenis inertia scroll synced to GSAP ScrollTrigger (`src/lib/useLenis.js`)
+  - Hero: line-by-line mask reveal, staggered fade-ups, mouse parallax on glow + portrait
+  - Word-stagger heading reveals + drawing hairlines site-wide (`src/lib/anim.jsx`)
+  - Work: heading column pins (desktop) while cards scroll; spring FLIP filtering;
+    hover zoom/lift/glow; custom cursor labels ("View"/"Play") on fine pointers
+  - Scroll-progress hairline, drifting film grain, magnetic CTAs
