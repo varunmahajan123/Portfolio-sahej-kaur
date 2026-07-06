@@ -50,7 +50,7 @@ export default function StickyCTA() {
             href={CONTACT_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[52px] w-full max-w-sm items-center justify-center gap-2 rounded-full bg-lilac px-8 font-sans text-[0.95rem] font-semibold text-plum-950 shadow-[0_16px_40px_-8px_rgba(20,12,32,0.8)]"
+            className="cta-gradient inline-flex min-h-[52px] w-full max-w-sm items-center justify-center gap-2 rounded-full px-8 font-sans text-[0.95rem] font-semibold shadow-[0_16px_40px_-8px_rgba(30,10,60,0.8)]"
           >
             Let&rsquo;s work together
             <span aria-hidden="true" className="text-lg leading-none">→</span>

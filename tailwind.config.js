@@ -11,26 +11,26 @@ export default {
          parchment→ text tones (never pure white)                    */
       colors: {
         plum: {
-          950: '#2E2440',
-          900: '#332843',
-          800: '#3B2E4D',
-          700: '#463659',
-          600: '#52416A',
-          500: '#5B4B7A',
+          950: '#2E1065',
+          900: '#3B1690',
+          800: '#4C1D95',
+          700: '#5B21B6',
+          600: '#6D28D9',
+          500: '#7C3AED',
         },
         wisteria: {
-          DEFAULT: '#B79FD4',
-          deep: '#9B7FC0',
+          DEFAULT: '#C4B5FD',
+          deep: '#A78BFA',
         },
-        lilac: '#C9B6E4',
+        lilac: '#E9D5FF',
         mauve: {
-          DEFAULT: '#E3C3D4',
-          glow: '#D9A8C4',
+          DEFAULT: '#F9A8D4',
+          glow: '#F472B6',
         },
         parchment: {
-          DEFAULT: '#F0EAF6',
-          dim: '#C9C0D8',
-          faint: '#9D92B4',
+          DEFAULT: '#FAF7FF',
+          dim: '#DDD3F8',
+          faint: '#BCA9EE',
         },
       },
       fontFamily: {

@@ -36,7 +36,7 @@ export default function MagneticButton({ href, children, className = '' }) {
       onPointerMove={onMove}
       onPointerLeave={onLeave}
       style={{ x: sx, y: sy }}
-      className={`inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-lilac px-7 py-3.5 font-sans text-[0.95rem] font-semibold text-plum-950 transition-colors duration-300 hover:bg-mauve ${className}`}
+      className={`cta-gradient inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-7 py-3.5 font-sans text-[0.95rem] font-semibold ${className}`}
     >
       {children}
       <span aria-hidden="true" className="text-lg leading-none">→</span>

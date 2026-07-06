@@ -22,8 +22,8 @@
 
   body {
     @apply bg-plum-800 font-sans text-parchment antialiased;
-    /* Subtle vertical depth: page darkens gently toward the edges */
-    background-image: linear-gradient(180deg, #3b2e4d 0%, #352a46 55%, #2e2440 100%);
+    /* Vivid violet sweep: bright purple upper-left into deep indigo-violet */
+    background-image: linear-gradient(135deg, #7c3aed 0%, #5b21b6 45%, #3b1690 78%, #312e81 100%);
     background-attachment: fixed;
     overflow-x: hidden;
   }
@@ -57,13 +57,23 @@
     @apply font-sans text-[0.7rem] font-semibold uppercase tracking-eyebrow text-wisteria;
   }
 
-  /* Soft rose-mauve radial glow — the hero's single light source */
+  /* Pink-magenta radial glow — the hero's single light source */
   .glow {
     background: radial-gradient(
       ellipse at center,
-      rgba(217, 168, 196, 0.28) 0%,
-      rgba(183, 159, 212, 0.12) 40%,
+      rgba(244, 114, 182, 0.35) 0%,
+      rgba(168, 85, 247, 0.18) 40%,
       transparent 70%
     );
+  }
+
+  /* Primary CTA surface: the pink→magenta gradient pill from the brand banner */
+  .cta-gradient {
+    @apply bg-gradient-to-r from-mauve-glow via-fuchsia-500 to-purple-600 text-white ring-2 ring-white/60;
+    background-size: 130% 100%;
+    transition: background-position 0.4s ease;
+  }
+  .cta-gradient:hover {
+    background-position: 90% 0;
   }
 }
